@@ -19,9 +19,12 @@ void invertirIterativa(int *arr, int tam){
 	}
 }
 
+//se utilizó goto para no consumir la memoria de la pila
 void invertirRecursiva(int *arr, int l, int r){
 	inversion:
 		if(l > r) return;
+		//intercambia los numeros ubicados en l y r
+		//l avanza y r retrocede
 		intercambio(&l, &r);
 		l++, r--;
 		goto inversion;
@@ -30,6 +33,7 @@ void invertirRecursiva(int *arr, int l, int r){
 int main(){
 	int* arr = new int [num];
 	int tam = num;
+	//generando los numeros aleatorios
 	srand(time(NULL));
 	for(int i = 0; i < tam; i++) *(arr + i) = rand() % 1000;
 	
