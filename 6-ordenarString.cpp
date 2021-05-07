@@ -1,5 +1,7 @@
 #include<iostream>
+#include<fstream>
 #include<time.h>
+#include<stdlib.h>
 using namespace std;
 const int num = 1e6;
 
@@ -17,8 +19,8 @@ void quicksort(string arr[], int lo, int hi){
 }
 
 int main(){
-	srand(time(0));
 	string *arr = new string[num];
+	/*
 	int aux = 0;
 	string s = "";
 	for(int i = 0; i < num; i++){
@@ -29,18 +31,17 @@ int main(){
 		}
 		*(arr + i) = s;
 	}
-	
-	cout << "ARREGLO DESORDENADO\n\nPrimeros 10 elementos\n";
-	for(int i = 0; i < 10; i++)cout << arr[i] << "\n";
-	cout << "Ultimos 10 elementos\n";
-	for(int i = num - 1; i >= 999990; i--)cout << arr[i] << "\n";
-	
-	quicksort(arr, 0, num - 1);
-	cout << "\nARREGLO ORDENADO\n\nPrimeros 10 elementos\n";
-	for(int i = 0; i < 10; i++)cout << arr[i] << "\n";
-	cout << "Ultimos 10 elementos\n";
-	for(int i = 999990; i < num; i++)cout << arr[i] << "\n";
-	
+	*/
+	ifstream palabrasDes("D:\\3ero\\cc2\\arreglosGit\\loren.txt");
+	ofstream palabrasOrden("D:\\3ero\\cc2\\arreglosGit\\lorenOrdenado.txt");
+	for(int i = 0; i < num; i++){
+		palabrasDes >> *(arr + i);
+	}	
+	quicksort(arr, 0, num-1);
+	for(int i = 0; i < num; i++){
+		palabrasOrden << *(arr + i) << " ";
+	}
 	delete [] arr;
 }
+
 
