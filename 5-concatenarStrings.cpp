@@ -1,5 +1,4 @@
 #include<iostream>
-#include<utility>
 using namespace std;
 
 void concatenar(char* a, char* b, int tamA, int tamB){
